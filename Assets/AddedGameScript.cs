@@ -7,7 +7,11 @@ using UnityEngine.SceneManagement;
 public class AddedGameScript : MonoBehaviour
 {
     public GameObject Character;
+    public Text timertext;
+    public Text scoretext;
     private int Score;
+
+    private float timer = 30f;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +22,10 @@ public class AddedGameScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        timer -= Time.deltaTime;
+        timertext.GetComponent<Text>().text = "Time left: " + Mathf.Round(timer);
+        scoretext.GetComponent<Text>().text = "Score: " + Score;
+
         if (Score == 80)
         {
             SceneManager.LoadScene("GameWin");
