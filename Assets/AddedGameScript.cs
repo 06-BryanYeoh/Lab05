@@ -27,6 +27,7 @@ public class AddedGameScript : MonoBehaviour
         {
             Destroy(collision.gameObject);
             Score += 10;
+            print("test");
         }
     }
 }
