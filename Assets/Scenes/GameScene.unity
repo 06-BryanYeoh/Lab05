@@ -1312,6 +1312,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Character: {fileID: 513957025}
+  particleprefabs: {fileID: 100000, guid: 32aafb358d61bd14b9b27ed0871fe43b, type: 3}
   timertext: {fileID: 65482862}
   scoretext: {fileID: 1302529741}
 --- !u!1 &429442793

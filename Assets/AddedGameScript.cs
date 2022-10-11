@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class AddedGameScript : MonoBehaviour
 {
     public GameObject Character;
+    public GameObject particleprefabs;
     public Text timertext;
     public Text scoretext;
     private int Score;
@@ -34,12 +35,17 @@ public class AddedGameScript : MonoBehaviour
         {
             SceneManager.LoadScene("GameLose");
         }
+        if (timer <= 0)
+        {
+            SceneManager.LoadScene("GameLose");
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.tag == "Coin")
         {
+            Instantiate(particleprefabs, transform.position, Quaternion.identity);
             Destroy(collision.gameObject);
             Score += 10;
         }
