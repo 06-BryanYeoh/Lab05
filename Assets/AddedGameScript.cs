@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class AddedGameScript : MonoBehaviour
 {
-
+    public GameObject Character;
     private int Score;
 
     // Start is called before the first frame update
@@ -22,6 +22,10 @@ public class AddedGameScript : MonoBehaviour
         {
             SceneManager.LoadScene("GameWin");
         }
+        if (Character.transform.position.y < -2)
+        {
+            SceneManager.LoadScene("GameLose");
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -30,10 +34,6 @@ public class AddedGameScript : MonoBehaviour
         {
             Destroy(collision.gameObject);
             Score += 10;
-        }
-        if(collision.gameObject.tag == "Water")
-        {
-            SceneManager.LoadScene("GameLose");
         }
     }
 }
