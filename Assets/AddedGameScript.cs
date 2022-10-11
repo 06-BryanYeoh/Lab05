@@ -20,7 +20,7 @@ public class AddedGameScript : MonoBehaviour
     {
         if (Score == 80)
         {
-            
+            SceneManager.LoadScene("GameWin");
         }
     }
 
@@ -30,6 +30,10 @@ public class AddedGameScript : MonoBehaviour
         {
             Destroy(collision.gameObject);
             Score += 10;
+        }
+        if(collision.gameObject.tag == "Water")
+        {
+            SceneManager.LoadScene("GameLose");
         }
     }
 }
